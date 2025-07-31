@@ -1,45 +1,41 @@
-# vue-kavia
+# Notes Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+A minimal single-page Vue 3 web app for managing notes, featuring:
+- Create, edit, delete, list, and search notes (CRUD).
+- Modern split-pane layout: sidebar for all notes & search, main area for note editor.
+- Minimal, light theme with color palette:
+  - **Primary**: #1976D2
+  - **Secondary**: #424242
+  - **Accent**: #FFC107
 
-## Recommended IDE Setup
+## Usage
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. Copy `.env.example` to `.env` and set `VITE_API_URL` to your notes backend endpoint (e.g., `http://localhost:5000/api/notes`).
+2. Install dependencies: `npm install`
+3. Launch: `npm run dev`
+4. Open the app in your browser.
 
-## Type Support for `.vue` Imports in TS
+The UI will try to communicate with the backend listed in your `VITE_API_URL`. If backend isn't present, requests fail gracefully.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Features
 
-## Customize configuration
+- **Notes Sidebar**: List all notes, search, and create new note.
+- **Note Editor**: View, edit, create, or delete the selected note.
+- **Simple SPA**: All pages in one clean standalone interface.
+- **Minimal State Libraries**: Uses Vue's composition API and Pinia.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Development
 
-## Project Setup
+- Vue 3 (Composition API), Vite, TypeScript.
+- Use the color palette for global CSS variables (see `App.vue`).
+- Further styling edits can be made by changing colors using CSS variables.
 
-```sh
-npm install
-```
+## Environment Variables
 
-### Compile and Hot-Reload for Development
+- `VITE_API_URL`: URL for the notes backend (required for real operation).
 
-```sh
-npm run dev
-```
+> For backend API, see notes_database container docs.
 
-### Type-Check, Compile and Minify for Production
+## License
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+MIT
